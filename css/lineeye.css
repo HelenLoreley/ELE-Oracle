@@ -1,0 +1,89 @@
+:root {
+  --rotation: 0deg;
+  --container-width: 600px;
+  --container-height: 600px;
+  --element-width: 62%;
+  --element-height: 62%;
+  --element-bottom: 6%;
+  --element-right: 5%;
+  --outline-width: 1px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--body-background-color);
+  font-family: "Operator Mono", menlo, monaco, monospace;
+  font-size: 14px;
+  color: white;
+  background-repeat: no-repeat; /* 禁止背景图像重复 */
+  background-size: cover; /* 确保背景图像覆盖整个屏幕 */
+}
+
+.settings-panel {
+  /* remove this to enter adjustment mode */
+  display: none;
+  position: absolute;
+  max-width: 200px;
+  max-height: 435px;
+  overflow: auto;
+  padding: .5em;
+  background: #00000099;
+  border-radius: 6px;
+}
+
+.settings-panel-title {
+  cursor: pointer;
+}
+
+.settings-panel[open] .settings-panel-title {
+  cursor: default;
+}
+
+#settings {
+  position: relative;
+  z-index: 2;
+}
+
+.setting {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.setting:first-of-type {
+  margin-top: 1em;
+}
+
+#scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#scene div {
+  width: var(--container-width);
+  height: var(--container-height);
+  border-top: var(--outline-width) solid deeppink;
+  border-right: var(--outline-width) solid mediumspringgreen;
+  position: relative;
+  border-radius: 100%;
+  transform: translateZ(0) rotate(var(--rotation));
+}
+
+#scene div div {
+  width: var(--element-width);
+  position: absolute;
+  bottom: var(--element-bottom);
+  right: var(--element-right);
+  animation: eyeball 2s infinite ease-in-out;
+}
+
+@keyframes eyeball {
+  from, 8%, 92%, to {
+    height: 99.6%;
+  }
+  50% {
+    height: var(--element-height);
+  }
+}

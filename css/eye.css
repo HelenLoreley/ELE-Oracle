@@ -1,0 +1,347 @@
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #001c34;
+  font-size: 10px;
+  background-repeat: no-repeat; /* 禁止背景图像重复 */
+  background-size: cover; /* 确保背景图像覆盖整个屏幕 */
+}
+
+#svg-defs {
+  display: none;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 70vw;
+  position: relative;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+[class*="row"] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye-element-container {
+  cursor: pointer;
+  width: 25.3333333333%;
+  margin: -1% 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eye-element-container:hover .pupil {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+svg.eye-svg {
+  width: 100%;
+}
+svg.eye-svg [id*="eye-clip-path"] path {
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+svg.eye-svg.blink [id*="eye-clip-path"] path {
+  -webkit-animation: blink 0.225s ease-in-out;
+          animation: blink 0.225s ease-in-out;
+}
+svg.eye-svg * {
+  pointer-events: none;
+}
+svg.eye-svg:active #eye-clip-path-1 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-2 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-3 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-4 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-5 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-6 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-7 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-8 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-9 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-10 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-11 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-12 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-13 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-14 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+svg.eye-svg:active #eye-clip-path-15 path {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.eye-moving-elements {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.eye-moving-elements, .pupil-group, .highlight {
+  transition: -webkit-transform .05s ease-out;
+  transition: transform .05s ease-out;
+  transition: transform .05s ease-out, -webkit-transform .05s ease-out;
+}
+
+.white-eye-background, .highlight {
+  fill: #EFEAE4;
+}
+
+.iris {
+  fill: #eb3e25;
+  transition: fill .1s ease-in-out;
+}
+.iris.red {
+  fill: #df3a61;
+}
+.iris.blue {
+  fill: #6a7aad;
+}
+.iris.green {
+  fill: #7ca497;
+}
+.iris.yellow {
+  fill: #ecc261;
+}
+
+.pupil {
+  fill: #852800;
+  opacity: 0.72;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transition: -webkit-transform .25s ease-in-out;
+  transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+  pointer-events: none;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes blink {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+.debug-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Helvetica', 'Arial', san-serif;
+  color: white;
+  padding: 10px;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0088ff;
+  color: #ffffff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,  -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease,  -webkit-transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+button:hover {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.button-container {
+	position: absolute;
+}
+
+.pop-button {
+	background: linear-gradient(
+		45deg,
+		rgba(255, 85, 85, 0.6),
+		rgba(85, 255, 85, 0.2),
+		rgba(85, 85, 255, 0.6)
+	);
+	background-size: 600% 100%;
+	border: none;
+	border-radius: 25px;
+	color: white;
+	cursor: pointer;
+	font-family: "Gruppo", sans-serif;
+	font-size: 18px;
+	padding: 15px 30px;
+	position: static;
+	text-align: center;
+	transition: all 0.3s ease, background 5s ease;
+	z-index: 1;
+}
+
+.pop-button:hover {
+	transform: scale(1.5);
+	background-position: 100% 0;
+}
+
+.explosion {
+	position: fixed;
+	border-radius: 50%;
+	opacity: 0;
+	animation: explosion-animation 1s;
+}
+@keyframes explosion-animation {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(5);
+	}
+}
+
+
+@font-face {
+  font-family: 'Tech Glowing Font';
+  src: url('tech-glowing-font.ttf') format('truetype'); /* 替换成你的科技感字体文件 */
+}
+
+.opening-text {
+  text-align: center;
+  font-family: 'Tech Glowing Font', sans-serif; /* 使用科技感字体 */
+  font-size: 20px; /* 字体大小 */
+  color: #fff; /* 字体颜色 */
+  white-space: nowrap; /* 防止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}
+
+.opening-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(1em);
+  animation: reveal 1s forwards, glow 2s alternate infinite; /* 添加发光闪烁动画 */
+}
+
+.opening-text.animate span {
+  animation: colorChange 1s alternate infinite, moveUp 1s alternate infinite, glow 2s alternate infinite; /* 同时应用颜色变化、上移和发光闪烁动画 */
+}
+
+@keyframes colorChange {
+  to {
+    color: #00ff04; /* 变化后的颜色 */
+  }
+}
+
+@keyframes moveUp {
+  to {
+    transform: translateY(-0.5em);
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px #00ff04, 0 0 20px #00ff04, 0 0 30px #00ff04; /* 发光闪烁效果 */
+  }
+}

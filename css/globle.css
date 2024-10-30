@@ -1,0 +1,190 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+html,body{
+	height: 100%;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	color:inherit;
+	text-decoration: none;
+}
+@keyframes circle{
+	to{transform: 0deg}
+	from{transform: 360deg}
+}
+.pai{
+	width: 5rem;
+	height: 8.6rem;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	box-sizing: border-box;
+	border:1px solid transparent;
+	border-radius: 5px;
+	background-color: #ededed;
+	transition: 1s;
+}
+.biao{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform: rotateY(-180deg);
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.bei{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url('../img/waite/b.jpg');
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 768px){
+	html{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+@media only screen (min-width: 10px) and (max-width: 479px){
+	html{
+		font-size: 11px;
+	}
+}
+
+/*弹框*/
+.popover{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.curtain{
+	background-color: rgba(0,0,0,.3);
+	width: 100%;
+	height: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.prompt{
+	/*这里有一个问题，如果prompt没有设置高度，子元素设置百分比依旧可以，为什么？*/
+	width: 45%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: linear-gradient(to bottom, #c5afd2, #e3fafe); /* Cream to light blue gradient background */
+	text-align: center;
+	color: aquamarine;
+	border-radius: 5px;
+	padding: 15px 5px;
+	z-index: 10000;
+}
+.prompt>h3{
+	width: 90%;
+	font-family: FangSong;
+	margin: 10px auto;
+	color: rgb(72, 54, 68);
+	text-align: center;
+}
+.prompt>textarea{
+	width: 100%;
+	height: 5rem;
+	margin: 10px 0;
+	resize:none;
+}
+.prompt>img{
+	width: 60%;
+}
+.side{
+	width: 6rem;
+	height: 3rem;
+	line-height: 3rem;
+	background-color: #a6b5e7;
+	position: fixed;
+	text-align: center;
+	border-radius: .2rem;
+	color: white;
+	right: 0;
+	font-size: 1rem;
+	transition: .5s;
+}
+.side:hover{
+	width: 6rem;
+}
+
+
+
+.btn{
+	background: linear-gradient(
+		45deg,
+		rgba(255, 85, 85, 0.2),
+		rgba(85, 255, 85, 0.2),
+		rgba(85, 85, 255, 0.3)
+	);
+	background-size: 600% 100%;
+	border: none;
+	border-radius: 25px;
+	color: white; 
+	cursor: pointer;
+	font-family: 'Fangsong';
+	font-size: 18px;
+	padding: 10px 10px;
+	position: static;
+	text-align: center;
+	transition: all 0.3s ease, background 5s ease;
+	z-index: 1;
+}
+
+.btn:hover{
+	transform: scale(1.5);
+	background-position: 100% 0;
+}
+
+.explosion{
+	position: fixed;
+	border-radius: 50%;
+	opacity: 0;
+	animation: explosion-animation 1s;
+}
+@keyframes explosion-animation {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	100%{
+		opacity: 0;
+		transform: scale(5);
+	}
+}
